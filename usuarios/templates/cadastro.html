@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<form action="cadastro" method="POST">{% csrf_token %}
+
+    <label for="">Nome</label>
+    {{form.first_name}}
+    <label for="">Sobrenome</label>
+    {{form.last_name}}
+    <label for="">E-Mail</label>
+    {{form.email}}
+    <label for="">Senha</label>
+    {{form.password}}
+    <label for="">Usuario</label>
+    {{form.username}}
+
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+{% endblock %}

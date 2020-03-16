@@ -12,13 +12,10 @@
 <h3>Login:</h3>
 <form method="POST">
     {% csrf_token %}
-    <input type="text" name="email" id="email"/>
-    <input type="password" name="senha"/>
-    <a href="{% url 'verificaLogin' %}">Entrar</a>
+    <input type="text" name="username"/>
+    <input type="password" name="password"/>
+    <a href="#">Entrar</a>
 </form>
 
-{% for busca in buscas%}
-{{ busca.senha }}
-{% endfor %}
 
 {% endblock %}

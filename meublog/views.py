@@ -1,24 +1,11 @@
 from django.shortcuts import render
-from .models import Post, Usuario
+from .models import Post 
 from django.utils import timezone
-from .forms import PostForm, UsuarioForm
+from .forms import PostForm
+from django.shortcuts import redirect
+
 # Create your views here.
-def verificaLogin(request):
-    print("ola meu camarada")
-    buscas = Usuario.objects.all()
 
-    return render(request, 'home.html', {'buscas':buscas})
-
-def cadastro_usuario(request):
-    if request.method == "POST":
-        form = UsuarioForm(request.POST)
-        if form.is_valid():
-            usuario = form.save(commit=False)
-            usuario.email = request.user
-            usuario.save()
-    else:
-        form = UsuarioForm()
-    return render(request, 'cadastroUsuario.html',{'form':form})
 
 def post_new(request):
     if request.method == "POST":
